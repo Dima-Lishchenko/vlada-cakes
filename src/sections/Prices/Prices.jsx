@@ -212,7 +212,7 @@ const SimpleSlider = () => {
         {cakesPrices.map((item, idx) => (
           <div key={idx}>
             <SliderItem>
-              <Image src={item.photo} />
+              <Image loading="lazy" src={item.photo} />
               <PriceTitle>{item.title}</PriceTitle>
               <PriceCost>
                 {item.price}

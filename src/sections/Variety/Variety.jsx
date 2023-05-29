@@ -1,12 +1,17 @@
-import { useMemo, useState } from "react";
-import styled from "styled-components";
+import { lazy, useMemo, useState } from 'react'
+import styled from 'styled-components'
 
-import { Cake } from "./Cake";
-import { Cupcake } from "./Cupcake";
-import { Bentocake } from "./Bentocake";
-import { Handmade } from "./Handmade";
+import CakeIcon from 'assets/variety/cake.png'
+import BentoIcon from 'assets/variety/bento.png'
+import CupcakeIcon from 'assets/variety/cupcake.png'
+import HandmadeIcon from 'assets/variety/handmade.png'
 
-const data = ["Торти", "Бенто торти", "Кекси", "Ручна робота"];
+const Cake = lazy(() => import('./Cake'))
+const Cupcake = lazy(() => import('./Cupcake'))
+const Bentocake = lazy(() => import('./Bentocake'))
+const Handmade = lazy(() => import('./Handmade'))
+
+const data = ['Торти', 'Бенто торти', 'Кекси', 'Ручна робота']
 
 const Section = styled.div`
   height: 100vh;
@@ -14,7 +19,7 @@ const Section = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
-`;
+`
 
 const Container = styled.div`
   display: flex;
@@ -30,7 +35,7 @@ const Container = styled.div`
     max-width: 1400px;
     justify-content: space-between;
   }
-`;
+`
 
 const Left = styled.div`
   display: flex;
@@ -45,14 +50,14 @@ const Left = styled.div`
   @media only screen and (min-width: 768px) {
     flex: 1;
   }
-`;
+`
 
 const List = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 20px;
-`;
+`
 
 const ListItem = styled.li`
   font-size: 48px;
@@ -90,7 +95,7 @@ const ListItem = styled.li`
   }
 
   ::after {
-    content: "${(props) => props.text}";
+    content: '${props => props.text}';
     position: absolute;
     top: 0;
     left: 0;
@@ -99,10 +104,10 @@ const ListItem = styled.li`
     overflow: hidden;
     white-space: nowrap;
   }
-`;
+`
 
 const Right = styled.div`
-  cursor: pointer;
+  text-align: center;
 
   @media only screen and (max-width: 768px) {
     height: 60vh;
@@ -110,28 +115,35 @@ const Right = styled.div`
 
   @media only screen and (min-width: 768px) {
     flex: 1;
+    cursor: pointer;
   }
-`;
+`
+
+const Image = styled.img`
+  height: 100%;
+  max-width: 80%;
+  object-fit: contain;
+`
 
 export const Variety = () => {
-  const [active, setActive] = useState(
-    data[Math.floor(Math.random() * data.length)]
-  );
+  const [active, setActive] = useState(data[Math.floor(Math.random() * data.length)])
 
   const icon = useMemo(() => {
+    const isMobile = window.innerWidth < 768
+
     switch (active) {
-      case "Торти":
-        return <Cake />;
-      case "Кекси":
-        return <Cupcake />;
-      case "Бенто торти":
-        return <Bentocake />;
-      case "Ручна робота":
-        return <Handmade />;
+      case 'Торти':
+        return isMobile ? <Image src={CakeIcon} alt="cake" loading="lazy" /> : <Cake />
+      case 'Кекси':
+        return isMobile ? <Image src={CupcakeIcon} alt="cupcake" loading="lazy" /> : <Cupcake />
+      case 'Бенто торти':
+        return isMobile ? <Image src={BentoIcon} alt="bento" loading="lazy" /> : <Bentocake />
+      case 'Ручна робота':
+        return isMobile ? <Image src={HandmadeIcon} alt="handmade" loading="lazy" /> : <Handmade />
       default:
-        return <Cake />;
+        return null
     }
-  }, [active]);
+  }, [active])
 
   return (
     <Section id="variety">
@@ -142,13 +154,13 @@ export const Variety = () => {
               return (
                 <ListItem
                   key={item}
-                  className={item === active ? "active" : ""}
+                  className={item === active ? 'active' : ''}
                   text={item}
                   onMouseEnter={() => setActive(item)}
                 >
                   {item}
                 </ListItem>
-              );
+              )
             })}
           </List>
         </Left>
@@ -156,5 +168,5 @@ export const Variety = () => {
         <Right>{icon}</Right>
       </Container>
     </Section>
-  );
-};
+  )
+}

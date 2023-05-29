@@ -1,7 +1,7 @@
 import { OrbitControls, Stage, useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 
-export const Cupcake = (props) => {
+const Cupcake = (props) => {
   const { nodes, materials } = useGLTF("/cupcake-transformed.glb");
 
   return (
@@ -43,3 +43,5 @@ export const Cupcake = (props) => {
 };
 
 useGLTF.preload("/cupcake-transformed.glb");
+
+export default Cupcake;

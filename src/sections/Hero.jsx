@@ -1,12 +1,12 @@
-import { MeshDistortMaterial, Sphere } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
+import { MeshDistortMaterial, Sphere } from '@react-three/drei'
+import { Canvas } from '@react-three/fiber'
 
-import styled from "styled-components";
+import styled from 'styled-components'
 
-import Navbar from "components/Navbar";
-import InstagramLink from "components/InstagramLink";
+import Navbar from 'components/Navbar'
+import InstagramLink from 'components/InstagramLink'
 
-import Owner from "assets/vlada.jpg";
+import Owner from 'assets/vlada.jpg'
 
 const Section = styled.div`
   height: 100vh;
@@ -20,7 +20,7 @@ const Section = styled.div`
     height: 200vh;
     scroll-snap-align: start;
   }
-`;
+`
 
 const Container = styled.div`
   height: 100%;
@@ -39,7 +39,7 @@ const Container = styled.div`
     margin: 0 auto;
     max-width: 1400px;
   }
-`;
+`
 
 const Left = styled.div`
   flex: 2;
@@ -52,7 +52,7 @@ const Left = styled.div`
     flex: 1;
     align-items: center;
   }
-`;
+`
 
 const Title = styled.h1`
   font-size: 60px;
@@ -61,21 +61,21 @@ const Title = styled.h1`
     text-align: center;
     font-size: 48px;
   }
-`;
+`
 
 const WhatWeDo = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-`;
+`
 
 const Line = styled.img`
   height: 5px;
-`;
+`
 
 const Subtitle = styled.h2`
   color: #da4ea2;
-`;
+`
 
 const Desc = styled.p`
   font-size: 20px;
@@ -86,7 +86,7 @@ const Desc = styled.p`
     text-align: center;
     font-size: 16px;
   }
-`;
+`
 
 const Right = styled.div`
   flex: 3;
@@ -96,7 +96,7 @@ const Right = styled.div`
     flex: 1;
     width: 100%;
   }
-`;
+`
 
 const Img = styled.img`
   height: 400px;
@@ -111,8 +111,8 @@ const Img = styled.img`
   animation: animate 2s infinite ease alternate;
 
   @media only screen and (max-width: 768px) {
-    width: 300px;
-    height: 300px;
+    width: 60vw;
+    height: auto;
   }
 
   @keyframes animate {
@@ -120,7 +120,7 @@ const Img = styled.img`
       transform: translateY(20px);
     }
   }
-`;
+`
 
 export const Hero = () => {
   return (
@@ -134,14 +134,12 @@ export const Hero = () => {
             <Subtitle>Про мене</Subtitle>
           </WhatWeDo>
           <Desc>
-            Привіт, мене звати Влада, я кондитер з досвідом 5 років. Мій профіль
-            - це оригінальні та креативні солодощі, які хочеться фотографувати,
-            та ще більше - одразу ж спробувати. Зроблю десерт для будь-якої
-            події - усіляких свят, дитячих вечірок, весіль. <br />
-            <br /> Кожен торт готується спеціально для вас, по індивідуальному
-            дизайну. В каталозі ви можете обрати смак, на ваш вибір - 11
-            найсмачніших варіантів начинки. Ви точно знайдете для себе ідеальний
-            торт!
+            Привіт, мене звати Влада, я кондитер з досвідом 5 років. Мій профіль - це оригінальні та
+            креативні солодощі, які хочеться фотографувати, та ще більше - одразу ж спробувати.
+            Зроблю десерт для будь-якої події - усіляких свят, дитячих вечірок, весіль. <br />
+            <br /> Кожен торт готується спеціально для вас, по індивідуальному дизайну. В каталозі
+            ви можете обрати смак, на ваш вибір - 11 найсмачніших варіантів начинки. Ви точно
+            знайдете для себе ідеальний торт!
           </Desc>
           <InstagramLink />
         </Left>
@@ -150,17 +148,12 @@ export const Hero = () => {
             <ambientLight intensity={1} />
             <directionalLight position={[3, 2, 1]} />
             <Sphere args={[1, 100, 200]} scale={2.4}>
-              <MeshDistortMaterial
-                color="#3d1c56"
-                attach="material"
-                distort={0.5}
-                speed={2}
-              />
+              <MeshDistortMaterial color="#3d1c56" attach="material" distort={0.5} speed={2} />
             </Sphere>
           </Canvas>
           <Img src={Owner} />
         </Right>
       </Container>
     </Section>
-  );
-};
+  )
+}

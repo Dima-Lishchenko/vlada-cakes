@@ -1,7 +1,7 @@
 import { OrbitControls, Stage, useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 
-export const Handmade = (props) => {
+const Handmade = (props) => {
   const { nodes, materials } = useGLTF("/handmade-transformed.glb");
 
   return (
@@ -688,3 +688,5 @@ export const Handmade = (props) => {
 };
 
 useGLTF.preload("/handmade-transformed.glb");
+
+export default Handmade;

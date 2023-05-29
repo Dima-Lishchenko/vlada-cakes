@@ -2,7 +2,13 @@ import styled from "styled-components";
 
 const posts = [
   {
-    img: <img src={require("../assets/gallery/1.jpeg")} alt="cake" />,
+    img: (
+      <img
+        loading="lazy"
+        src={require("../assets/gallery/1.jpeg")}
+        alt="cake"
+      />
+    ),
     title:
       "Бенто 1кг\n" +
       "Вишня Шоколад\n" +
@@ -11,7 +17,13 @@ const posts = [
     link: "https://www.instagram.com/p/CqTdpIqNR-6/",
   },
   {
-    img: <img src={require("../assets/gallery/2.jpeg")} alt="cake" />,
+    img: (
+      <img
+        loading="lazy"
+        src={require("../assets/gallery/2.jpeg")}
+        alt="cake"
+      />
+    ),
     title:
       "Капкейки\n" +
       "10шт\n" +
@@ -21,7 +33,13 @@ const posts = [
     link: "https://www.instagram.com/p/Cq5PnS-teXf/",
   },
   {
-    img: <img src={require("../assets/gallery/3.jpeg")} alt="cake" />,
+    img: (
+      <img
+        loading="lazy"
+        src={require("../assets/gallery/3.jpeg")}
+        alt="cake"
+      />
+    ),
     title:
       "Шоко Бум 2кг\n" +
       "🍫\n" +
@@ -30,7 +48,13 @@ const posts = [
     link: "https://www.instagram.com/p/Cr0nseJtos3/",
   },
   {
-    img: <img src={require("../assets/gallery/4.jpeg")} alt="cake" />,
+    img: (
+      <img
+        loading="lazy"
+        src={require("../assets/gallery/4.jpeg")}
+        alt="cake"
+      />
+    ),
     title:
       "Бенто Тортик\n" +
       "0.5кг\n" +
@@ -40,7 +64,13 @@ const posts = [
     link: "https://www.instagram.com/p/CsqONB6Nnsa/",
   },
   {
-    img: <img src={require("../assets/gallery/5.jpeg")} alt="cake" />,
+    img: (
+      <img
+        loading="lazy"
+        src={require("../assets/gallery/5.jpeg")}
+        alt="cake"
+      />
+    ),
     title:
       "Бенто Тортик\n" +
       "1кг\n" +
@@ -50,7 +80,13 @@ const posts = [
     link: "https://www.instagram.com/p/CsnyE4Htxyl/",
   },
   {
-    img: <img src={require("../assets/gallery/6.jpeg")} alt="cake" />,
+    img: (
+      <img
+        loading="lazy"
+        src={require("../assets/gallery/6.jpeg")}
+        alt="cake"
+      />
+    ),
     title:
       "Бенто Тортик\n" +
       "0.5кг\n" +
@@ -60,7 +96,13 @@ const posts = [
     link: "https://www.instagram.com/p/CsOBYgKN2IC/",
   },
   {
-    img: <img src={require("../assets/gallery/7.jpeg")} alt="cake" />,
+    img: (
+      <img
+        loading="lazy"
+        src={require("../assets/gallery/7.jpeg")}
+        alt="cake"
+      />
+    ),
     title:
       "Бенто Тортик\n" +
       "0.5кг\n" +
@@ -70,7 +112,13 @@ const posts = [
     link: "https://www.instagram.com/p/CsI96XNtAbG/",
   },
   {
-    img: <img src={require("../assets/gallery/8.jpeg")} alt="cake" />,
+    img: (
+      <img
+        loading="lazy"
+        src={require("../assets/gallery/8.jpeg")}
+        alt="cake"
+      />
+    ),
     title:
       "Великдень закінчився ,\n" +
       "а я ще с Пасками ні )😅\n" +
